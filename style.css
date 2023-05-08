@@ -1,0 +1,129 @@
+/* #為呼叫id , .為class */
+
+#cards {
+  /* 預設軸-row */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  /* 1- 卡片在容器裡的排版（4排，每排13張） */
+  /* flex 是 flex-basis , flex-grow , flew-shirnk */
+  flex: 7% 0 1;
+  /* 每個 item 分配容器寬度 8vw: 8%的視窗大小 */
+  height: 8vw;
+  /* 依視窗的寬度等比例變化 */
+  border: 2px solid #e0e0e0;
+  margin: 2px;
+  box-sizing: border-box;
+  /* 設定 box-sizing*/
+
+  /* 2- 卡片內部元素的排版（兩個數字，一張圖片），下個階段 */
+  display: flex;
+  /* flex 軸 為row ，跟主要軸垂直的為 交叉軸*/
+  flex-direction: column;
+  /* main axis 主要軸 */
+  justify-content: space-around;
+  /* 上下前後各留一點空間 */
+
+}
+
+.card img {
+  max-width: 30%;
+  align-self: center;
+  /* 跟交叉軸對齊 */
+}
+
+.card p {
+  margin: 3px;
+  font-size: 10px;
+}
+
+/* 選擇p物件  旋轉位置 可以試試看90 會再中心的地方*/
+.card p:last-child {
+  transform: rotate(180deg);
+}
+
+
+.back {
+  background: url('https://assets-lighthouse.alphacamp.co/uploads/image/file/9222/ExportedContentImage_00.png');
+  /* 照片尺寸調整 */
+  background-size: cover;
+}
+
+.paired {
+  background-color: #babce5;
+}
+
+#header {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 95%;
+}
+
+#header .title {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header .title img {
+  max-width: 3em;
+}
+
+#header .title h2 {
+  padding-left: 0.5em;
+}
+
+#header .score {
+  margin: 0;
+  color: #6c90ac;
+}
+
+#header .tried {
+  margin-top: 0;
+}
+
+/* css 閃爍動畫定義  */
+@keyframes wrongAnimation {
+
+  /* 通常可以用百分比的方式製作動畫的流程，但這邊比較明確是直接執行閃爍 */
+  to {
+    border: 2px solid #f1c232;
+  }
+}
+
+/* 再將動畫套用在某個名稱上面 */
+.wrong {
+  /* 播放0.2秒 */
+  animation: wrongAnimation 0.2s;
+  /* 動畫要播放幾次 */
+  animation-iteration-count: 5;
+}
+
+
+
+/** Game finished **/
+.completed {
+  position: absolute;
+  z-index: 999;
+  top: 33vh;
+  background-color: RGBA(232, 246, 254, 0.8);
+  width: 100vw;
+  padding: 50px 0;
+}
+
+.completed>p {
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  margin: 0;
+}
+
+.completed>p:first-child {
+  font-size: 3em;
+  font-weight: 700;
+  color: #758d9a;
+}
