@@ -33,7 +33,9 @@ const GAME_STATE = {
   - dispatchCardAction (卡片狀態)：依照不同遊戲的狀態，做不同的行為
   - resetCard（配對失敗）： 資料清除，並且需停留一秒。
 
-### Game Rule
+## Game Rule
 1. 翻開兩張撲克牌，是否配對成功
 2. 紀錄分數與嘗試次數
 
+## Sample Demo 
+- https://tangcamy.github.io/MemoryGame_FrontEnd/
